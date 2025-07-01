@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useContext } from "react";
-import CartContext from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import "./index.css";
 
 const Header = () => {
