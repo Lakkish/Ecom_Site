@@ -1,13 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 
+import { CartProvider } from "./context/CartContext";
+
 import "./App.css";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-    </Routes>
+    <CartProvider>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </CartProvider>
   );
 };
 
