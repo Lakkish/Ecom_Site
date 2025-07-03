@@ -46,7 +46,7 @@
   margin-left: 85px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
   .home-desktop-img {
     display: none;
   }
