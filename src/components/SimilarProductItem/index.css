@@ -4,6 +4,17 @@
   list-style-type: none;
 }
 
+.similar-product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.similar-product-link:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
 @media screen and (min-width: 768px) {
   .similar-product-item {
     width: 200px;
