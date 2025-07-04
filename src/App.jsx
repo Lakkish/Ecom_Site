@@ -4,6 +4,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import ProductItemDetails from "./components/ProductItemDetails";
+import Cart from "./components/Cart";
 
 import { CartProvider } from "./context/CartContext";
 
@@ -35,6 +36,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <ProductItemDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
             </ProtectedRoute>
           }
         />
