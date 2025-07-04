@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Products from "./components/Products";
 import ProductItemDetails from "./components/ProductItemDetails";
 import Cart from "./components/Cart";
+import NotFound from "./components/NotFound";
 
 import { CartProvider } from "./context/CartContext";
 
@@ -47,6 +48,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </CartProvider>
   );
