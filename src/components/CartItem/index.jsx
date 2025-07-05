@@ -16,9 +16,16 @@ const CartItem = ({ cartItemDetails }) => {
   const { id, title, brand, quantity, price, imageUrl } = cartItemDetails;
 
   const onRemoveCartItem = () => removeCartItem(id);
-  const onClickIncreaseQuantity = () => incrementCartItemQuantity(id);
-  const onClickDecreaseQuantity = () => decrementCartItemQuantity(id);
-
+  const onClickIncreaseQuantity = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    incrementCartItemQuantity(id);
+  };
+  const onClickDecreaseQuantity = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    decrementCartItemQuantity(id);
+  };
   return (
     <li className="cart-item">
       <Link to={`/products/${id}`} className="cart-item-link">
@@ -51,7 +58,11 @@ const CartItem = ({ cartItemDetails }) => {
             <button
               className="remove-button"
               type="button"
-              onClick={onRemoveCartItem}
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                onRemoveCartItem();
+              }}
             >
               Remove
             </button>
