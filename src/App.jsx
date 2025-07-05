@@ -9,48 +9,53 @@ import NotFound from "./components/NotFound";
 
 import { CartProvider } from "./context/CartContext";
 
+import { Analytics } from "@vercel/analytics/react";
+
 import "./App.css";
 
 const App = () => {
   return (
-    <CartProvider>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/products"
-          element={
-            <ProtectedRoute>
-              <Products />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/products/:id"
-          element={
-            <ProtectedRoute>
-              <ProductItemDetails />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/cart"
-          element={
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </CartProvider>
+    <>
+      <Analytics />
+      <CartProvider>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/products"
+            element={
+              <ProtectedRoute>
+                <Products />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/products/:id"
+            element={
+              <ProtectedRoute>
+                <ProductItemDetails />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </CartProvider>
+    </>
   );
 };
 
